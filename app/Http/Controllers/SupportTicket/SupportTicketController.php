@@ -7,6 +7,13 @@ use Illuminate\Http\Request;
 
 class SupportTicketController extends Controller
 {
+
+    //Open new ticket
+    public function open()
+    {
+        return view('pages.ticket.open-ticket');
+    }
+
     //Get All ticket
     public function all()
     {

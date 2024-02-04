@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('title')
-    {{ 'Active user' }}
+    {{ 'Downloads' }}
 @endsection
 @section('content')
     <!-- Content -->
@@ -8,18 +8,16 @@
 
         <!-- Bordered Table -->
         <div class="card">
-            <h5 class="card-header">Active Users</h5>
+            <h5 class="card-header">Downloads</h5>
             <div class="card-body">
                 <div class="table-responsive text-nowrap">
                     <table class="table table-bordered">
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Avatar</th>
-                                <th>Full Name</th>
-                                <th>Email</th>
-                                <th>Phone no</th>
-                                <th>Status</th>
+                                <th>Thumb</th>
+                                <th>Product</th>
+                                <th>Price</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -36,17 +34,17 @@
                                                 class="rounded-circle" />
                                         </li>
                                     </ul>
-
                                 </td>
-                                <td>shazib ahmed</td>
-                                <td>example@gmail.com</td>
-                                <td>01685412069</td>
+                                <td>this is demo product</td>
                                 <td>
-                                    <span class="badge bg-label-success me-1">Active</span>
+                                    $20
                                 </td>
                                 <td class="d-flex">
-                                    <a href="{{ route('user.view', ['id' => '1']) }}" style="margin-right: 15px">
-                                        <i class="bx bx-show mx-1"></i>
+                                    <a href="#" style="margin-right: 15px">
+                                        <i class='bx bx-down-arrow-alt'></i>
+                                    </a>
+                                    <a href="#" style="margin-right: 15px">
+                                        <i class='bx bx-food-menu'></i>
                                     </a>
                                 </td>
                             </tr>

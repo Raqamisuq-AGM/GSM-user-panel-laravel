@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('title')
-    {{ 'SEO setting' }}
+    {{ 'Open new ticket' }}
 @endsection
 @section('content')
     <!-- Content -->
@@ -10,10 +10,12 @@
             <!-- Add Product -->
             <div class="d-flex flex-wrap justify-content-between align-items-center mb-3">
                 <div class="d-flex flex-column justify-content-center">
-                    {{-- <h4 class="mb-1 mt-3">Add a new Product</h4> --}}
+                    <h4 class="mb-1 mt-3">Open new ticket</h4>
                 </div>
                 <div class="d-flex align-content-center flex-wrap gap-3">
-                    <button class="btn btn-label-primary">Update</button>
+                    <button type="submit" class="btn btn-primary">
+                        Submit
+                    </button>
                 </div>
             </div>
 
@@ -22,23 +24,28 @@
                 <div class="col-12 col-lg-12">
                     <!-- Product Information -->
                     <div class="card mb-4">
-                        <div class="card-header">
-                            <h5 class="card-tile mb-0">SEO</h5>
-                        </div>
                         <div class="card-body">
                             <div class="mb-3">
-                                <label class="form-label" for="author">Author</label>
-                                <input type="text" class="form-control" id="author" placeholder="shazib"
-                                    name="author" aria-label="Author" />
+                                <label class="form-label" for="ecommerce-product-name">Subject</label>
+                                <input type="text" class="form-control" id="ecommerce-product-name" placeholder="Subject"
+                                    name="Subject" aria-label="Subject" />
                             </div>
-                            <div class="mb-3">
-                                <label class="form-label" for="title_slogan">Title</label>
-                                <input type="text" class="form-control" id="title_slogan" placeholder="Title"
-                                    name="productTitle" aria-label="Title/Slogan" />
+                            <!-- Category -->
+                            <div class="mb-3 col ecommerce-select2-dropdown">
+                                <label class="form-label mb-1 d-flex justify-content-between align-items-center"
+                                    for="category-org">
+                                    <span>Priority</span>
+                                </label>
+                                <select id="category-org" class="select2 form-select" data-placeholder="Select Category">
+                                    <option value="">Select Priority</option>
+                                    <option value="Household">High</option>
+                                    <option value="Management">Medium</option>
+                                    <option value="Electronics">Normal</option>
+                                </select>
                             </div>
                             <!-- Description -->
                             <div>
-                                <label class="form-label">Meta Description</label>
+                                <label class="form-label">Description</label>
                                 <div class="form-control p-0 pt-1">
                                     <div class="comment-toolbar border-0 border-bottom">
                                         <div class="d-flex justify-content-start">
@@ -46,21 +53,41 @@
                                                 <button class="ql-bold"></button>
                                                 <button class="ql-italic"></button>
                                                 <button class="ql-underline"></button>
+                                                <button class="ql-list" value="ordered"></button>
+                                                <button class="ql-list" value="bullet"></button>
+                                                <button class="ql-link"></button>
+                                                <button class="ql-image"></button>
                                             </span>
                                         </div>
                                     </div>
                                     <div class="comment-editor border-0 pb-4" id="ecommerce-category-description"></div>
                                 </div>
                             </div>
-                            <!-- Tags -->
-                            <div class="mb-3 mt-3">
-                                <label for="ecommerce-product-tags" class="form-label mb-1">Keywords</label>
-                                <input id="ecommerce-product-tags" class="form-control" name="ecommerce-product-tags"
-                                    value="Normal,Standard,Premium" aria-label="Product Tags" />
-                            </div>
                         </div>
                     </div>
                     <!-- /Product Information -->
+                    <!-- Media -->
+                    <div class="card mb-4">
+                        <div class="card-header d-flex justify-content-between align-items-center">
+                            <h5 class="mb-0 card-title">Attachments</h5>
+                        </div>
+                        <div class="card-body">
+                            <form action="#" class="dropzone needsclick" id="dropzone-basic">
+                                <div class="dz-message needsclick my-5">
+                                    <p class="fs-4 note needsclick my-2">
+                                        Drag and drop your image here
+                                    </p>
+                                    <small class="text-muted d-block fs-6 my-2">or</small>
+                                    <span class="note needsclick btn bg-label-primary d-inline" id="btnBrowse">Browse
+                                        image</span>
+                                </div>
+                                <div class="fallback">
+                                    <input name="file" type="file" />
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- /Media -->
                 </div>
                 <!-- /Second column -->
             </div>
