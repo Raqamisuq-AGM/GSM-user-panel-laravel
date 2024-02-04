@@ -65,10 +65,6 @@
                                     class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ansTicket">
                                     Answer
                                 </a>
-                                <a href="javascript:;" class="btn btn-label-danger suspend-user" data-bs-toggle="modal"
-                                    data-bs-target="#closeTicket">
-                                    Close
-                                </a>
                             </div>
                         </div>
                     </div>

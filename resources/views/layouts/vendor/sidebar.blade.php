@@ -64,86 +64,26 @@
             </a>
         </li>
 
-        <li
-            class="menu-item {{ request()->routeIs('category.all', 'category.add', 'category.edit', 'category.update') ? 'active open' : '' }}">
-            <a href="javascript:void(0);" class="menu-link menu-toggle">
-                {{-- <i class="menu-icon tf-icons bx bx-layout"></i> --}}
-                <i class='menu-icon tf-icons bx bx-list-ul'></i>
-                <div class="text-truncate">Categories</div>
+        <li class="menu-item {{ request()->routeIs('download') ? 'active' : '' }}">
+            <a href="{{ route('download') }}" class="menu-link">
+                <i class='menu-icon tf-icons bx bx-down-arrow-alt'></i>
+                <div class="text-truncate">Download</div>
             </a>
-
-            <ul class="menu-sub">
-                <li class="menu-item {{ request()->routeIs('category.add') ? 'active' : '' }}">
-                    <a href="{{ route('category.add') }}" class="menu-link">
-                        <div>Add new</div>
-                    </a>
-                </li>
-
-                <li class="menu-item {{ request()->routeIs('category.all') ? 'active' : '' }}">
-                    <a href="{{ route('category.all') }}" class="menu-link">
-                        <div>All</div>
-                    </a>
-                </li>
-            </ul>
         </li>
 
         <li
-            class="menu-item {{ request()->routeIs('sub-category.all', 'sub-category.add', 'sub-category.edit', 'sub-category.update') ? 'active open' : '' }}">
-            <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class='menu-icon tf-icons bx bx-list-plus'></i>
-                <div class="text-truncate">Sub Categories</div>
-            </a>
-
-            <ul class="menu-sub">
-                <li class="menu-item {{ request()->routeIs('sub-category.add') ? 'active' : '' }}">
-                    <a href="{{ route('sub-category.add') }}" class="menu-link">
-                        <div>Add new</div>
-                    </a>
-                </li>
-
-                <li class="menu-item {{ request()->routeIs('sub-category.all') ? 'active' : '' }}">
-                    <a href="{{ route('sub-category.all') }}" class="menu-link">
-                        <div>All</div>
-                    </a>
-                </li>
-            </ul>
-        </li>
-
-        <li
-            class="menu-item {{ request()->routeIs('product.all', 'product.add', 'product.edit', 'product.update') ? 'active open' : '' }}">
-            <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class='menu-icon tf-icons bx bx-cart'></i>
-                <div class="text-truncate">Products</div>
-            </a>
-
-            <ul class="menu-sub">
-                <li class="menu-item {{ request()->routeIs('product.add') ? 'active' : '' }}">
-                    <a href="{{ route('product.add') }}" class="menu-link">
-                        <div>Upload</div>
-                    </a>
-                </li>
-
-                <li class="menu-item {{ request()->routeIs('product.all') ? 'active' : '' }}">
-                    <a href="{{ route('product.all') }}" class="menu-link">
-                        <div>All</div>
-                    </a>
-                </li>
-            </ul>
-        </li>
-
-        <li
-            class="menu-item {{ request()->routeIs('license.all', 'license.create', 'license.pending', 'license.suspended', 'license.edit', 'license.update', 'license.active') ? 'active open' : '' }}">
+            class="menu-item {{ request()->routeIs('license.all', 'license.create', 'license.pending', 'license.suspended', 'license.edit', 'license.update', 'license.active', 'license.view') ? 'active open' : '' }}">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class='menu-icon tf-icons bx bx-food-menu'></i>
                 <div class="text-truncate">License</div>
             </a>
 
             <ul class="menu-sub">
-                <li class="menu-item {{ request()->routeIs('license.create') ? 'active' : '' }}">
+                {{-- <li class="menu-item {{ request()->routeIs('license.create') ? 'active' : '' }}">
                     <a href="{{ route('license.create') }}" class="menu-link">
                         <div>Create new</div>
                     </a>
-                </li>
+                </li> --}}
 
                 <li class="menu-item {{ request()->routeIs('license.all') ? 'active' : '' }}">
                     <a href="{{ route('license.all') }}" class="menu-link">
@@ -162,37 +102,6 @@
                 </li>
                 <li class="menu-item {{ request()->routeIs('license.suspended') ? 'active' : '' }}">
                     <a href="{{ route('license.suspended') }}" class="menu-link">
-                        <div>Suspended</div>
-                    </a>
-                </li>
-            </ul>
-        </li>
-
-        <li
-            class="menu-item {{ request()->routeIs('user.all', 'user.view', 'user.active', 'user.pending', 'user.suspended', 'user.edit', 'user.update') ? 'active open' : '' }}">
-            <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class='menu-icon tf-icons bx bx-user'></i>
-                <div class="text-truncate">Users</div>
-            </a>
-
-            <ul class="menu-sub">
-                <li class="menu-item {{ request()->routeIs('user.all') ? 'active' : '' }}">
-                    <a href="{{ route('user.all') }}" class="menu-link">
-                        <div>All</div>
-                    </a>
-                </li>
-                <li class="menu-item {{ request()->routeIs('user.active') ? 'active' : '' }}">
-                    <a href="{{ route('user.active') }}" class="menu-link">
-                        <div>Active</div>
-                    </a>
-                </li>
-                <li class="menu-item {{ request()->routeIs('user.pending') ? 'active' : '' }}">
-                    <a href="{{ route('user.pending') }}" class="menu-link">
-                        <div>Pending</div>
-                    </a>
-                </li>
-                <li class="menu-item {{ request()->routeIs('user.suspended') ? 'active' : '' }}">
-                    <a href="{{ route('user.suspended') }}" class="menu-link">
                         <div>Suspended</div>
                     </a>
                 </li>
@@ -226,13 +135,18 @@
         </li>
 
         <li
-            class="menu-item {{ request()->routeIs('ticket.all', 'ticket.answered', 'ticket.pending', 'ticket.closed', 'ticket.view') ? 'active open' : '' }}">
+            class="menu-item {{ request()->routeIs('ticket.all', 'ticket.answered', 'ticket.pending', 'ticket.closed', 'ticket.view', 'ticket.open') ? 'active open' : '' }}">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class='menu-icon tf-icons bx bx-support'></i>
                 <div class="text-truncate">Support ticket</div>
             </a>
 
             <ul class="menu-sub">
+                <li class="menu-item {{ request()->routeIs('ticket.open') ? 'active' : '' }}">
+                    <a href="{{ route('ticket.open') }}" class="menu-link">
+                        <div>Open ticket</div>
+                    </a>
+                </li>
                 <li class="menu-item {{ request()->routeIs('ticket.all') ? 'active' : '' }}">
                     <a href="{{ route('ticket.all') }}" class="menu-link">
                         <div>All</div>
@@ -257,26 +171,16 @@
         </li>
 
         <li
-            class="menu-item {{ request()->routeIs('setting.company', 'setting.logo-fav', 'setting.seo', 'setting.change-password') ? 'active open' : '' }}">
+            class="menu-item {{ request()->routeIs('setting.profile', 'setting.logo-fav', 'setting.seo', 'setting.change-password') ? 'active open' : '' }}">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class='menu-icon tf-icons bx bx-cog'></i>
                 <div class="text-truncate">Settings</div>
             </a>
 
             <ul class="menu-sub">
-                <li class="menu-item {{ request()->routeIs('setting.company') ? 'active' : '' }}">
-                    <a href="{{ route('setting.company') }}" class="menu-link">
-                        <div>Company</div>
-                    </a>
-                </li>
-                {{-- <li class="menu-item {{ request()->routeIs('setting.logo-fav') ? 'active' : '' }}">
-                    <a href="{{ route('setting.logo-fav') }}" class="menu-link">
-                        <div>Logo & Fav</div>
-                    </a>
-                </li> --}}
-                <li class="menu-item {{ request()->routeIs('setting.seo') ? 'active' : '' }}">
-                    <a href="{{ route('setting.seo') }}" class="menu-link">
-                        <div>SEO</div>
+                <li class="menu-item {{ request()->routeIs('setting.profile') ? 'active' : '' }}">
+                    <a href="{{ route('setting.profile') }}" class="menu-link">
+                        <div>Profile</div>
                     </a>
                 </li>
                 <li class="menu-item {{ request()->routeIs('setting.change-password') ? 'active' : '' }}">

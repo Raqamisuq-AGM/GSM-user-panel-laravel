@@ -54,9 +54,6 @@
                                     <span class="badge bg-label-warning me-1">pending</span>
                                 </td>
                                 <td class="d-flex">
-                                    <a href="javascript:void(0);" style="margin-right: 15px">
-                                        <i class='bx bx-send me-1'></i>
-                                    </a>
                                     <a href="{{ route('invoice.view', ['id' => '1']) }}">
                                         <i class="bx bx-show mx-1"></i>
                                     </a>

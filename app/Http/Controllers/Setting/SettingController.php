@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class SettingController extends Controller
 {
     //Get Company setting
-    public function company()
+    public function profile()
     {
         return view('pages.setting.company-setting');
     }
